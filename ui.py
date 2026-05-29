@@ -1,4 +1,7 @@
 import logging
+import sql.sql_requests as req
+import sql.sql_connect
+import movie
 
 logger = logging.getLogger(__name__)
 
@@ -20,6 +23,11 @@ class Menu:
 
                 return choice_a_punct
 
-            except ValueError:
+            except ValueError as e:
                 logging.exception(" вы ввели букву а не число")
-                print("Ошибка, вы ввели букву а не число")
+                raise e
+
+
+
+
+
